@@ -458,10 +458,10 @@ def tokenize(line):
 # vectorizer = pickle.load(open("vectorizer_8class_svm.pickle", "rb"))
 
 # LSTM
-# loaded_model = load_model('8class_lstm_27_4.h5')
-# vectorizer = pickle.load(open("vectorizer_8class_lstm_27_4.pickle", "rb"))
-loaded_model = load_model('lstm_1.2.h5')
-vectorizer = pickle.load(open("vectorizer_8class_lstm_1.2.pickle", "rb"))
+loaded_model = load_model('8class_lstm_27_4.h5')
+vectorizer = pickle.load(open("vectorizer_8class_lstm_27_4.pickle", "rb"))
+# loaded_model = load_model('lstm_1.2.h5')
+# vectorizer = pickle.load(open("vectorizer_8class_lstm_1.2.pickle", "rb"))
 
 
 stopwordslist = []
