@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Login to Docker Hub
-      run: docker login -u ${{ secrets.mglue }} -p ${{ secrets.dckr_pat_fioklr9RTOAae6XgLWY5BjJqV7A }}
+      run: docker login -u ${{ secrets.mglue }} -p ${{ secrets.dckr_pat_uMEJDaFijR24OzXMdTcFqBwELk4 }}
     
     - name: Build the Docker image
       run: docker build -t all-content-app:1.0 -f Dockerfile.app .
