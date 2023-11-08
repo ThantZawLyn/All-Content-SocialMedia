@@ -1,0 +1,26 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu:22.04
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.mglue }} -p ${{ secrets.dckr_pat_fioklr9RTOAae6XgLWY5BjJqV7A }}
+    
+    - name: Build the Docker image
+      run: docker build -t all-content-app:1.0 -f Dockerfile.app .
+
+    - name: Tag the Docker image
+      run: docker tag all-content-app:1.1 mglue/all-content-app:1.1
+
+    - name: Push to Docker Hub
+      run: docker push mglue/all-content-app:1.1
