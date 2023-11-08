@@ -1,4 +1,5 @@
 [![Build and Push Docker Image](https://github.com/ThantZawLyn/All-Content-SocialMedia/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/ThantZawLyn/All-Content-SocialMedia/actions/workflows/main.yml)
+
 name: Build and Push Docker Image
 
 on:
