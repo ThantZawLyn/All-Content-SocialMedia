@@ -1,0 +1,17 @@
+# Use an official Python runtime as a parent image
+FROM joyzoursky/python-chromedriver:3.8-selenium
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your Python project files into the container
+COPY app.py .
+
+# Define the command to run your Python application
+CMD ["python", "app.py"]

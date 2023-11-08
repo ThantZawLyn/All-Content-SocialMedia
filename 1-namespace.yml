@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: crawler-apps
+  labels:
+    name: all-content-app
