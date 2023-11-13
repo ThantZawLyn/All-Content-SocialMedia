@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fb-keyword-app
+  name: fb-nlp-app
   namespace: crawler-apps
 spec:
   replicas: 3 # Adjust the number of replicas as needed
   selector:
     matchLabels:
-      app: fb-keyword-app
+      app: fb-nlp-app
   template:
     metadata:
       labels:
-        app: fb-keyword-app
+        app: fb-nlp-app
     spec:
       containers:
-      - name: fb-keyword-app
-        image: mglue/my-python-app:1.0
+      - name: fb-nlp-app
+        image: mglue/fb-nlp-app:1.2
         ports:
         - containerPort: 8080
 
@@ -23,10 +23,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-python-app-service
+  name: fb-nlp-app-service
 spec:
   selector:
-    app: fb-keyword-app
+    app: fb-nlp-app
   ports:
     - protocol: TCP
       port: 80
