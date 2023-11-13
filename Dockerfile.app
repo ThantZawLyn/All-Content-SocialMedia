@@ -8,7 +8,7 @@ WORKDIR /app
 #COPY keyword.txt .
 
 # Copy the requirements.txt file into the container
-#COPY stopword.txt .
+COPY stopword.txt .
 
 # Copy your Python project files into the container
 COPY . /app
