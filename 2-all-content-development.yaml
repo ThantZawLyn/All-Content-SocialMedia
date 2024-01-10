@@ -13,22 +13,8 @@ spec:
       labels:
         app: all-content-app
     spec:
-      containers:
-      - name: all-content-app
-        image: mglue/all-content-app:1.1
-        ports:
-        - containerPort: 8080
-
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: all-content-app-service
-spec:
-  selector:
-    app: all-content-app
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: LoadBalancer # Use "LoadBalancer" or "NodePort" as per your setup
+    containers:
+    - name: all-content-app
+      image: mglue/all-content-app:1.1
+      ports:
+      - containerPort: 8080
