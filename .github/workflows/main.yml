@@ -19,7 +19,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: .
-        file: ./Dockerfile
+        file: ./Dockerfile.nlpapp
         platforms: linux/amd64,linux/arm64
         push: true
         tags: |
@@ -30,6 +30,7 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.dckr_pat_B9HkCfGxwCdqGWydI4Q_hhiICvY }}
 
     - name: Deploy to Kubernetes
-      run: kubectl apply -f deployment.yaml
+      run: kubectl apply -f 1-namespace.yml
+      run: kubectl apply -f 2-all-content-development.yaml 
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
