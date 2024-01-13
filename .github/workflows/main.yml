@@ -29,8 +29,9 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.SECRETS_MGLUE }}
         DOCKER_PASSWORD: ${{ secrets.dckr_pat_B9HkCfGxwCdqGWydI4Q_hhiICvY }}
 
-    - name: Deploy to Kubernetes
+    - name: namespace to Kubernetes
       run: kubectl apply -f 1-namespace.yml
+    - name: Deploy to Kubernetes
       run: kubectl apply -f 2-all-content-development.yaml 
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
