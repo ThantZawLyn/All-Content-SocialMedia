@@ -24,14 +24,21 @@ jobs:
         push: true
         tags: |
           mglue/all-content-app:1.3
-          mglue/all-content-app:1.3:${{ github.sha }}
+          mglue/all-content-app:${{ github.sha }}
       env:
         DOCKER_USERNAME: ${{ secrets.SECRETS_MGLUE }}
         DOCKER_PASSWORD: ${{ secrets.dckr_pat_B9HkCfGxwCdqGWydI4Q_hhiICvY }}
 
-    - name: namespace to Kubernetes
-      run: kubectl apply -f 1-namespace.yml
-    - name: Deploy to Kubernetes
-      run: kubectl apply -f 2-all-content-development.yaml 
-      env:
-        KUBECONFIG: ${{ secrets.KUBECONFIG }}
+  deploy:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+      - name: Configure Kubeconfig
+        run: echo "$KUBECONFIG" > $HOME/.kube/config
+
+      - name: namespace to Kubernetes
+        run: kubectl apply -f 1-namespace.yml 2-all-content-development.yaml
+        env:
+          KUBECONFIG: ${{ secrets.KUBECONFIG }}
