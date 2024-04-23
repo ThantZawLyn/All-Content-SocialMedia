@@ -30,6 +30,5 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: "{{defaultContext}}:mysubdir"
           push: true
           tags: mglue/all-content-app:latest
