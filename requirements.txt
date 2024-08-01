@@ -1,6 +1,6 @@
 psycopg2==2.8.6
 psycopg2-binary
-tensorflow==2.9.1
+tensorflow==2.12.0
 scikit-learn==1.0.2
 python-time==0.3.0
 sqlalchemy==1.4.32
