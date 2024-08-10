@@ -1,12 +1,21 @@
 psycopg2==2.8.6
 psycopg2-binary
-tensorflow==2.9.1
-scikit-learn==1.0.2
+tensorflow==2.12.0
+scikit-learn==1.5.0
 python-time==0.3.0
 sqlalchemy==1.4.32
 pandas==1.5.3
-keras==2.9.0
+keras==2.13.1rc0
 pyidaungsu==0.1.4
 emoji==2.0.0
 regex==2022.3.15
 googletrans==4.00rc1
+httpx>=0.23.0 # not directly required, pinned by Snyk to avoid a vulnerability
+idna>=3.7 # not directly required, pinned by Snyk to avoid a vulnerability
+numpy>=1.22.2 # not directly required, pinned by Snyk to avoid a vulnerability
+requests>=2.32.2 # not directly required, pinned by Snyk to avoid a vulnerability
+setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability
+urllib3>=2.2.2 # not directly required, pinned by Snyk to avoid a vulnerability
+werkzeug>=3.0.3 # not directly required, pinned by Snyk to avoid a vulnerability
+wheel>=0.38.0 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
