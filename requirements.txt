@@ -5,7 +5,7 @@ scikit-learn==1.0.2
 python-time==0.3.0
 sqlalchemy==1.4.32
 pandas==1.5.3
-keras==2.9.0
+keras==3.11.0
 pyidaungsu==0.1.4
 emoji==2.0.0
 regex==2022.3.15
